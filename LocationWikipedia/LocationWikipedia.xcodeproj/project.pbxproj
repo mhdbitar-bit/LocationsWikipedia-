@@ -18,6 +18,8 @@
 		4CB368F427D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */; };
 		4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690127D119F4004F0AF0 /* Endpoint.swift */; };
 		4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */; };
+		4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690627D1270B004F0AF0 /* LocationModels.swift */; };
+		4CB3690927D127BE004F0AF0 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4CB3690127D119F4004F0AF0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndpoint.swift; sourceTree = "<group>"; };
+		4CB3690627D1270B004F0AF0 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
+		4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				4CB368D927D115D3004F0AF0 /* Assets.xcassets */,
 				4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */,
 				4CB368DE27D115D3004F0AF0 /* Info.plist */,
+				4CB3690627D1270B004F0AF0 /* LocationModels.swift */,
 			);
 			path = LocationWikipedia;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				4CB3690127D119F4004F0AF0 /* Endpoint.swift */,
 				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
+				4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */,
 				4CB368D527D115D2004F0AF0 /* ViewController.swift in Sources */,
+				4CB3690927D127BE004F0AF0 /* NetworkEngine.swift in Sources */,
 				4CB368D127D115D2004F0AF0 /* AppDelegate.swift in Sources */,
 				4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */,
 				4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */,
