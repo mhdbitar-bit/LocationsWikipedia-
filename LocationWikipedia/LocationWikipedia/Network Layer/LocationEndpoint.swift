@@ -12,7 +12,7 @@ enum LocationEndpoint {
 }
 
 extension LocationEndpoint: Endpoint {
-    var shceme: String {
+    var scheme: String {
         switch self {
         default:
             return "https"
