@@ -16,6 +16,8 @@
 		4CB368E827D115D4004F0AF0 /* LocationWikipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */; };
 		4CB368F227D115D4004F0AF0 /* LocationWikipediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368F127D115D4004F0AF0 /* LocationWikipediaUITests.swift */; };
 		4CB368F427D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */; };
+		4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690127D119F4004F0AF0 /* Endpoint.swift */; };
+		4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4CB368ED27D115D4004F0AF0 /* LocationWikipediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationWikipediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB368F127D115D4004F0AF0 /* LocationWikipediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaUITests.swift; sourceTree = "<group>"; };
 		4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CB3690127D119F4004F0AF0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		4CB368CF27D115D2004F0AF0 /* LocationWikipedia */ = {
 			isa = PBXGroup;
 			children = (
+				4CB3690027D119E6004F0AF0 /* Network Layer */,
 				4CB368D027D115D2004F0AF0 /* AppDelegate.swift */,
 				4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */,
 				4CB368D427D115D2004F0AF0 /* ViewController.swift */,
@@ -125,6 +130,15 @@
 				4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */,
 			);
 			path = LocationWikipediaUITests;
+			sourceTree = "<group>";
+		};
+		4CB3690027D119E6004F0AF0 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690127D119F4004F0AF0 /* Endpoint.swift */,
+				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,8 @@
 			files = (
 				4CB368D527D115D2004F0AF0 /* ViewController.swift in Sources */,
 				4CB368D127D115D2004F0AF0 /* AppDelegate.swift in Sources */,
+				4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */,
+				4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */,
 				4CB368D327D115D2004F0AF0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
