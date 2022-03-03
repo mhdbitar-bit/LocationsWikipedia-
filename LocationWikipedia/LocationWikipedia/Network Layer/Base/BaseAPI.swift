@@ -1,5 +1,5 @@
 //
-//  NetworkEngine.swift
+//  BaseAPI.swift
 //  LocationWikipedia
 //
 //  Created by Mohammad Bitar on 3/3/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-class NetworkEngine {
+class BaseAPI {
     
-    class func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
-    
+    func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
+        
         let components = makeURLComponents(endpoint)
         
         guard let url = components.url else { return }
@@ -41,7 +41,7 @@ class NetworkEngine {
         dataTask.resume()
     }
     
-    private static func makeURLComponents(_ endpoint: Endpoint) -> URLComponents {
+    private func makeURLComponents(_ endpoint: Endpoint) -> URLComponents {
         var components = URLComponents()
         components.scheme = endpoint.scheme
         components.host = endpoint.baseURL
