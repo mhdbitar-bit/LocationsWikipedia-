@@ -14,7 +14,6 @@ public protocol LocationService {
 }
 
 public final class RemoteLocationService: LocationService {
-    //    private lazy var baseURL = URL(string: "https://raw.githubusercontent.com")!
     private let url: URL
     private let client: HTTPClient
     
