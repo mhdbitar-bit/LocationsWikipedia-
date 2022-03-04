@@ -18,7 +18,10 @@ public final class LocationMapper: Decodable {
         }
         
         var items: [LocationDTO] {
-            locations.map { LocationDTO(name: $0.name, latitude: $0.lat, longitude: $0.long) }
+            locations.map { LocationDTO(
+                name: $0.name,
+                coordinators: (latitude: $0.lat, longitude: $0.long)
+            ) }
         }
     }
     
