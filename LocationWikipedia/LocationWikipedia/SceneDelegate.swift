@@ -6,15 +6,30 @@
 //
 
 import UIKit
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    private let navigationController = UINavigationController()
+   
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = makeRootViewController()
+        window?.makeKeyAndVisible()
+    }
+    
+    func makeRootViewController() -> LocationsListViewController {
+        let vc = LocationsListViewController()
+        vc.navigationItem.title = "Locations"
+        vc.service = RemoteLocationService(
+            url: URL(string: "https://raw.githubusercontent.com")!,
+            client: URLSessionHTTPClient(session: .shared))
+        return vc
     }
 }
 
