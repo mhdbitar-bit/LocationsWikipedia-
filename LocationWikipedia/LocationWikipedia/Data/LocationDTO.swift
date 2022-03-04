@@ -7,8 +7,7 @@
 
 import Foundation
 
-public struct LocationDTO: Equatable {
+public struct LocationDTO {    
     let name: String
-    let latitude: Double
-    let longitude: Double
+    let coordinators: (latitude: Double, longitude: Double)
 }
