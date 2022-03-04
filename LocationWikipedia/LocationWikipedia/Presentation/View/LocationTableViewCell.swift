@@ -13,9 +13,9 @@ final class LocationTableViewCell: UITableViewCell {
     @IBOutlet var latLabel: UILabel!
     @IBOutlet var longLabel: UILabel!
     
-    func configure(_ vm: LocationViewModel) {
-        nameLabel.text = vm.name
-        latLabel.text = "\(vm.coordinators.latitude)"
-        longLabel.text = "\(vm.coordinators.longitude)"
+    func configure(_ location: LocationDTO) {
+        nameLabel.text = location.name
+        latLabel.text = "\(location.coordinators.latitude)"
+        longLabel.text = "\(location.coordinators.longitude)"
     }
 }
