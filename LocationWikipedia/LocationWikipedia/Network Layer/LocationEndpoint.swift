@@ -7,43 +7,18 @@
 
 import Foundation
 
-enum LocationEndpoint {
+public enum LocationEndpoint {
     case getLocations
-}
-
-extension LocationEndpoint: Endpoint {
-    var scheme: String {
-        switch self {
-        default:
-            return "https"
-        }
-    }
     
-    var baseURL: String {
-        switch self {
-        default:
-            return "raw.githubusercontent.com"
-        }
-    }
-    
-    var path: String {
+    public func url(baseURL: URL) -> URL {
         switch self {
         case .getLocations:
-            return "/abnamrocoesd/assignment-ios/main/locations.json"
-        }
-    }
-    
-    var parameters: [URLQueryItem] {
-        switch self {
-        case .getLocations:
-            return []
-        }
-    }
-    
-    var method: String {
-        switch self {
-        case .getLocations:
-            return "GET"
+            var components = URLComponents()
+            components.scheme = baseURL.scheme
+            components.host = baseURL.host
+            components.path = baseURL.path + "/abnamrocoesd/assignment-ios/main/locations.json"
+            components.queryItems = []
+            return components.url!
         }
     }
 }
