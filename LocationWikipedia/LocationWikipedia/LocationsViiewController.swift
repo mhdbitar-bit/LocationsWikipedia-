@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class LocationsViiewController: UITableViewController {
+final class LocationsListViewController: UITableViewController {
     
-    
+    var service: LocationService!
     
 }
