@@ -10,12 +10,12 @@ import UIKit
 final class LocationsListViewController: UITableViewController {
     
     let cellID = "LocationTableViewCell"
-    var locations = [LocationDTO]()
+    var locations = [Location]()
     var service: LocationService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
@@ -31,17 +31,21 @@ final class LocationsListViewController: UITableViewController {
     }
     
     @objc private func refresh() {
-        refreshControl?.beginRefreshing()
+        DispatchQueue.main.async { [weak self] in
+            self?.refreshControl?.beginRefreshing()
+        }
         service?.getLocations(completion: handleAPIResult)
     }
     
-    private func handleAPIResult(_ result: Result<[LocationDTO], Error>) {
+    private func handleAPIResult(_ result: Result<[Location], Error>) {
         switch result {
         case let .success(locations):
             self.locations = locations
-            self.refreshControl?.endRefreshing()
-            self.tableView.reloadData()
-            
+            DispatchQueue.main.async { [weak self] in
+                self?.refreshControl?.endRefreshing()
+                self?.tableView.reloadData()
+            }
+
         case .failure(_):
             refresh()
             return
@@ -64,7 +68,40 @@ final class LocationsListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let location = locations[indexPath.row]
-        // TODO Deeplink Wikipedia
+        openLocationInWiki(locations[indexPath.row])
     }
+    
+    private func openLocationInWiki(_ location: Location) {
+//        let locationBaseUrlStr = LocationURL.scheme
+//          + "://"
+//          + LocationURL.host
+//        
+//        var queryItems = [URLQueryItem]()
+//        // Check for available coordinates
+//        if let latitude = location.latitude, let longitude = location.longitude {
+//          queryItems = [URLQueryItem(name: LocationURL.latitude, value: latitude), URLQueryItem(name: LocationURL.longitude, value: longitude)]
+//        } else {
+//          // Pass just the place
+//          queryItems = [URLQueryItem(name: LocationURL.place, value: location.place)]
+//        }
+//        
+//        guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
+//          debugPrint("Invalid location base url")
+//          return
+//        }
+//        
+//        urlComps.queryItems = queryItems
+//        
+//        guard let locationUrl = urlComps.url else {
+//          debugPrint("Invalid location final url")
+//          return
+//        }
+//        
+//        if router.canOpenURL(url: locationUrl) {
+//          router.openURL(url: locationUrl, completion: nil)
+//        } else {
+//          router.present(error: CustomError.missingWikiURLScheme)
+//        }
+      }
+        
 }

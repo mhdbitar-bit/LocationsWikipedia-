@@ -13,7 +13,7 @@ final class LocationTableViewCell: UITableViewCell {
     @IBOutlet var latLabel: UILabel!
     @IBOutlet var longLabel: UILabel!
     
-    func configure(_ location: LocationDTO) {
+    func configure(_ location: Location) {
         nameLabel.text = location.name
         latLabel.text = "\(location.coordinators.latitude)"
         longLabel.text = "\(location.coordinators.longitude)"

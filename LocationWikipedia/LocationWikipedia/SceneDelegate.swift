@@ -26,8 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func makeRootViewController() -> LocationsListViewController {
         let vc = LocationsListViewController()
         vc.navigationItem.title = "Locations"
+        
         vc.service = RemoteLocationService(
-            url: URL(string: "https://raw.githubusercontent.com")!,
+            url: LocationEndpoint.getLocations.url(baseURL: URL(string: "https://raw.githubusercontent.com")!),
             client: URLSessionHTTPClient(session: .shared))
         return vc
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol LocationService {
-    typealias Result = Swift.Result<[LocationDTO], Error>
+    typealias Result = Swift.Result<[Location], Error>
     
     func getLocations(completion: @escaping (Result) -> Void)
 }

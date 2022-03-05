@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LocationDTO {    
-    let name: String
+public struct Location {    
+    let name: String?
     let coordinators: (latitude: Double, longitude: Double)
 }
