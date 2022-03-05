@@ -45,7 +45,7 @@ final class LocationsListViewController: UITableViewController {
                 self?.refreshControl?.endRefreshing()
                 self?.tableView.reloadData()
             }
-
+            
         case .failure(_):
             refresh()
             return
@@ -72,36 +72,35 @@ final class LocationsListViewController: UITableViewController {
     }
     
     private func openLocationInWiki(_ location: Location) {
-//        let locationBaseUrlStr = LocationURL.scheme
-//          + "://"
-//          + LocationURL.host
-//        
-//        var queryItems = [URLQueryItem]()
-//        // Check for available coordinates
-//        if let latitude = location.latitude, let longitude = location.longitude {
-//          queryItems = [URLQueryItem(name: LocationURL.latitude, value: latitude), URLQueryItem(name: LocationURL.longitude, value: longitude)]
-//        } else {
-//          // Pass just the place
-//          queryItems = [URLQueryItem(name: LocationURL.place, value: location.place)]
-//        }
-//        
-//        guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
-//          debugPrint("Invalid location base url")
-//          return
-//        }
-//        
-//        urlComps.queryItems = queryItems
-//        
-//        guard let locationUrl = urlComps.url else {
-//          debugPrint("Invalid location final url")
-//          return
-//        }
-//        
-//        if router.canOpenURL(url: locationUrl) {
-//          router.openURL(url: locationUrl, completion: nil)
-//        } else {
-//          router.present(error: CustomError.missingWikiURLScheme)
-//        }
-      }
+        let locationBaseUrlStr = LocationURL.scheme
+        + "://"
+        + LocationURL.host
         
+        var queryItems = [URLQueryItem]()
+
+        let latitude = location.coordinators.latitude
+        let longitude = location.coordinators.longitude
+        queryItems = [
+            URLQueryItem(name: LocationURL.latitude, value: "\(latitude)"),
+            URLQueryItem(name: LocationURL.longitude, value: "\(longitude)")
+        ]
+        
+        guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
+            print("Invalid location base url")
+            return
+        }
+        
+        urlComps.queryItems = queryItems
+        
+        guard let locationUrl = urlComps.url else {
+            print("Invalid location final url")
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(locationUrl) {
+            UIApplication.shared.open(locationUrl, options: [:], completionHandler: nil)
+        } else {
+            // Show error
+        }
+    }
 }
