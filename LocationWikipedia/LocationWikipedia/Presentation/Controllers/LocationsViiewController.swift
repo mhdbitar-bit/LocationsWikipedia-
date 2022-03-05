@@ -28,9 +28,7 @@ final class LocationsListViewController: UITableViewController, Alertable {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
-        
         setupRefreshControl()
-        
         bind()
     }
     
@@ -88,7 +86,11 @@ final class LocationsListViewController: UITableViewController, Alertable {
     @objc private func refresh() {
         viewModel.loadLocations()
     }
-        
+}
+
+// MARK: - TableView functions
+
+extension LocationsListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -107,8 +109,22 @@ final class LocationsListViewController: UITableViewController, Alertable {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openLocationInWiki(locations[indexPath.row])
     }
+}
+
+// MARK: - Open Extenral Link
+
+extension LocationsListViewController {
     
     private func openLocationInWiki(_ location: Location) {
+        if let locationUrl = makeLocationURL(from: location),
+           UIApplication.shared.canOpenURL(locationUrl) {
+            UIApplication.shared.open(locationUrl, options: [:], completionHandler: nil)
+        } else {
+            showAlert(message: LocationError.InvalidLocation.rawValue)
+        }
+    }
+    
+    private func makeLocationURL(from location: Location) -> URL? {
         let locationBaseUrlStr = LocationURL.scheme
         + "://"
         + LocationURL.host
@@ -124,20 +140,16 @@ final class LocationsListViewController: UITableViewController, Alertable {
         
         guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
             showAlert(message: LocationError.InvalidLocation.rawValue)
-            return
+            return nil
         }
         
         urlComps.queryItems = queryItems
         
         guard let locationUrl = urlComps.url else {
             showAlert(message: LocationError.InvalidLocation.rawValue)
-            return
+            return nil
         }
         
-        if UIApplication.shared.canOpenURL(locationUrl) {
-            UIApplication.shared.open(locationUrl, options: [:], completionHandler: nil)
-        } else {
-            showAlert(message: LocationError.InvalidLocation.rawValue)
-        }
+        return locationUrl
     }
 }
