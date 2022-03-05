@@ -19,5 +19,9 @@
 			</array>
 		</dict>
 	</dict>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>wikipedia</string>
+    </array>
 </dict>
 </plist>
