@@ -9,28 +9,21 @@
 /* Begin PBXBuildFile section */
 		4CB368D127D115D2004F0AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368D027D115D2004F0AF0 /* AppDelegate.swift */; };
 		4CB368D327D115D2004F0AF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */; };
-		4CB368D527D115D2004F0AF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368D427D115D2004F0AF0 /* ViewController.swift */; };
-		4CB368D827D115D2004F0AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368D627D115D2004F0AF0 /* Main.storyboard */; };
 		4CB368DA27D115D3004F0AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368D927D115D3004F0AF0 /* Assets.xcassets */; };
 		4CB368DD27D115D3004F0AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */; };
 		4CB368E827D115D4004F0AF0 /* LocationWikipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */; };
-		4CB368F227D115D4004F0AF0 /* LocationWikipediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368F127D115D4004F0AF0 /* LocationWikipediaUITests.swift */; };
-		4CB368F427D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */; };
-		4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690127D119F4004F0AF0 /* Endpoint.swift */; };
 		4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */; };
 		4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690627D1270B004F0AF0 /* LocationModels.swift */; };
-		4CB3690927D127BE004F0AF0 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */; };
+		4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */; };
+		4CB3691027D13C4D004F0AF0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690F27D13C4D004F0AF0 /* Location.swift */; };
+		4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */; };
+		4CB3691427D1556A004F0AF0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3691327D1556A004F0AF0 /* LocationService.swift */; };
+		4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */; };
+		4CDC22E627D2964F00331B0E /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		4CB368E427D115D4004F0AF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CB368C527D115D2004F0AF0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CB368CC27D115D2004F0AF0;
-			remoteInfo = LocationWikipedia;
-		};
-		4CB368EE27D115D4004F0AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4CB368C527D115D2004F0AF0 /* Project object */;
 			proxyType = 1;
@@ -43,20 +36,19 @@
 		4CB368CD27D115D2004F0AF0 /* LocationWikipedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationWikipedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB368D027D115D2004F0AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CB368D427D115D2004F0AF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4CB368D727D115D2004F0AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CB368D927D115D3004F0AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB368DC27D115D3004F0AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CB368DE27D115D3004F0AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CB368E327D115D4004F0AF0 /* LocationWikipediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationWikipediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaTests.swift; sourceTree = "<group>"; };
-		4CB368ED27D115D4004F0AF0 /* LocationWikipediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationWikipediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CB368F127D115D4004F0AF0 /* LocationWikipediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaUITests.swift; sourceTree = "<group>"; };
-		4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4CB3690127D119F4004F0AF0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndpoint.swift; sourceTree = "<group>"; };
 		4CB3690627D1270B004F0AF0 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
-		4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		4CB3690F27D13C4D004F0AF0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViiewController.swift; sourceTree = "<group>"; };
+		4CB3691327D1556A004F0AF0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CB368EA27D115D4004F0AF0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +74,6 @@
 			children = (
 				4CB368CF27D115D2004F0AF0 /* LocationWikipedia */,
 				4CB368E627D115D4004F0AF0 /* LocationWikipediaTests */,
-				4CB368F027D115D4004F0AF0 /* LocationWikipediaUITests */,
 				4CB368CE27D115D2004F0AF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +83,6 @@
 			children = (
 				4CB368CD27D115D2004F0AF0 /* LocationWikipedia.app */,
 				4CB368E327D115D4004F0AF0 /* LocationWikipediaTests.xctest */,
-				4CB368ED27D115D4004F0AF0 /* LocationWikipediaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,15 +90,15 @@
 		4CB368CF27D115D2004F0AF0 /* LocationWikipedia */ = {
 			isa = PBXGroup;
 			children = (
+				4CDC22E227D2959A00331B0E /* Presentation */,
+				4CB3690E27D13C42004F0AF0 /* Data */,
 				4CB3690027D119E6004F0AF0 /* Network Layer */,
 				4CB368D027D115D2004F0AF0 /* AppDelegate.swift */,
 				4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */,
-				4CB368D427D115D2004F0AF0 /* ViewController.swift */,
-				4CB368D627D115D2004F0AF0 /* Main.storyboard */,
 				4CB368D927D115D3004F0AF0 /* Assets.xcassets */,
 				4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */,
 				4CB368DE27D115D3004F0AF0 /* Info.plist */,
-				4CB3690627D1270B004F0AF0 /* LocationModels.swift */,
+				4CB3691327D1556A004F0AF0 /* LocationService.swift */,
 			);
 			path = LocationWikipedia;
 			sourceTree = "<group>";
@@ -128,23 +111,56 @@
 			path = LocationWikipediaTests;
 			sourceTree = "<group>";
 		};
-		4CB368F027D115D4004F0AF0 /* LocationWikipediaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4CB368F127D115D4004F0AF0 /* LocationWikipediaUITests.swift */,
-				4CB368F327D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift */,
-			);
-			path = LocationWikipediaUITests;
-			sourceTree = "<group>";
-		};
 		4CB3690027D119E6004F0AF0 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				4CB3690127D119F4004F0AF0 /* Endpoint.swift */,
+				4CB3690A27D13AF5004F0AF0 /* Base */,
 				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
-				4CB3690827D127BE004F0AF0 /* NetworkEngine.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		4CB3690A27D13AF5004F0AF0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4CB3690E27D13C42004F0AF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690627D1270B004F0AF0 /* LocationModels.swift */,
+				4CB3690F27D13C4D004F0AF0 /* Location.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4CDC22E227D2959A00331B0E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC22EB27D29A5100331B0E /* Controller */,
+				4CDC22EA27D29A4800331B0E /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		4CDC22EA27D29A4800331B0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */,
+				4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CDC22EB27D29A5100331B0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,24 +201,6 @@
 			productReference = 4CB368E327D115D4004F0AF0 /* LocationWikipediaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4CB368EC27D115D4004F0AF0 /* LocationWikipediaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB368FD27D115D4004F0AF0 /* Build configuration list for PBXNativeTarget "LocationWikipediaUITests" */;
-			buildPhases = (
-				4CB368E927D115D4004F0AF0 /* Sources */,
-				4CB368EA27D115D4004F0AF0 /* Frameworks */,
-				4CB368EB27D115D4004F0AF0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CB368EF27D115D4004F0AF0 /* PBXTargetDependency */,
-			);
-			name = LocationWikipediaUITests;
-			productName = LocationWikipediaUITests;
-			productReference = 4CB368ED27D115D4004F0AF0 /* LocationWikipediaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,10 +215,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					4CB368E227D115D4004F0AF0 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 4CB368CC27D115D2004F0AF0;
-					};
-					4CB368EC27D115D4004F0AF0 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 4CB368CC27D115D2004F0AF0;
 					};
@@ -241,7 +235,6 @@
 			targets = (
 				4CB368CC27D115D2004F0AF0 /* LocationWikipedia */,
 				4CB368E227D115D4004F0AF0 /* LocationWikipediaTests */,
-				4CB368EC27D115D4004F0AF0 /* LocationWikipediaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,18 +246,11 @@
 			files = (
 				4CB368DD27D115D3004F0AF0 /* LaunchScreen.storyboard in Resources */,
 				4CB368DA27D115D3004F0AF0 /* Assets.xcassets in Resources */,
-				4CB368D827D115D2004F0AF0 /* Main.storyboard in Resources */,
+				4CDC22E627D2964F00331B0E /* LocationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4CB368E127D115D4004F0AF0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CB368EB27D115D4004F0AF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,11 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB3691027D13C4D004F0AF0 /* Location.swift in Sources */,
 				4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */,
-				4CB368D527D115D2004F0AF0 /* ViewController.swift in Sources */,
-				4CB3690927D127BE004F0AF0 /* NetworkEngine.swift in Sources */,
+				4CB3691427D1556A004F0AF0 /* LocationService.swift in Sources */,
+				4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */,
+				4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */,
+				4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */,
 				4CB368D127D115D2004F0AF0 /* AppDelegate.swift in Sources */,
-				4CB3690227D119F4004F0AF0 /* Endpoint.swift in Sources */,
 				4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */,
 				4CB368D327D115D2004F0AF0 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,15 +284,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CB368E927D115D4004F0AF0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CB368F227D115D4004F0AF0 /* LocationWikipediaUITests.swift in Sources */,
-				4CB368F427D115D4004F0AF0 /* LocationWikipediaUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -313,22 +292,9 @@
 			target = 4CB368CC27D115D2004F0AF0 /* LocationWikipedia */;
 			targetProxy = 4CB368E427D115D4004F0AF0 /* PBXContainerItemProxy */;
 		};
-		4CB368EF27D115D4004F0AF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CB368CC27D115D2004F0AF0 /* LocationWikipedia */;
-			targetProxy = 4CB368EE27D115D4004F0AF0 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4CB368D627D115D2004F0AF0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CB368D727D115D2004F0AF0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -468,7 +434,6 @@
 				INFOPLIST_FILE = LocationWikipedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +461,6 @@
 				INFOPLIST_FILE = LocationWikipedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -552,42 +516,6 @@
 			};
 			name = Release;
 		};
-		4CB368FE27D115D4004F0AF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZUTM2D9M6W;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitar.LocationWikipediaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LocationWikipedia;
-			};
-			name = Debug;
-		};
-		4CB368FF27D115D4004F0AF0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZUTM2D9M6W;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitar.LocationWikipediaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LocationWikipedia;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -614,15 +542,6 @@
 			buildConfigurations = (
 				4CB368FB27D115D4004F0AF0 /* Debug */,
 				4CB368FC27D115D4004F0AF0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CB368FD27D115D4004F0AF0 /* Build configuration list for PBXNativeTarget "LocationWikipediaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CB368FE27D115D4004F0AF0 /* Debug */,
-				4CB368FF27D115D4004F0AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
