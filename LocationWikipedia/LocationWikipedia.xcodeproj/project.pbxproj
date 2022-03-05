@@ -13,13 +13,14 @@
 		4CB368DD27D115D3004F0AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */; };
 		4CB368E827D115D4004F0AF0 /* LocationWikipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */; };
 		4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */; };
-		4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690627D1270B004F0AF0 /* LocationModels.swift */; };
+		4CB3690727D1270B004F0AF0 /* LocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690627D1270B004F0AF0 /* LocationMapper.swift */; };
 		4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */; };
 		4CB3691027D13C4D004F0AF0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690F27D13C4D004F0AF0 /* Location.swift */; };
 		4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */; };
 		4CB3691427D1556A004F0AF0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3691327D1556A004F0AF0 /* LocationService.swift */; };
 		4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */; };
 		4CDC22E627D2964F00331B0E /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */; };
+		4CDDF98827D3659B00D91869 /* LocationURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDDF98727D3659B00D91869 /* LocationURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +43,14 @@
 		4CB368E327D115D4004F0AF0 /* LocationWikipediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationWikipediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaTests.swift; sourceTree = "<group>"; };
 		4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndpoint.swift; sourceTree = "<group>"; };
-		4CB3690627D1270B004F0AF0 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
+		4CB3690627D1270B004F0AF0 /* LocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapper.swift; sourceTree = "<group>"; };
 		4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		4CB3690F27D13C4D004F0AF0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViiewController.swift; sourceTree = "<group>"; };
 		4CB3691327D1556A004F0AF0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		4CDDF98727D3659B00D91869 /* LocationURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,8 @@
 		4CB368CF27D115D2004F0AF0 /* LocationWikipedia */ = {
 			isa = PBXGroup;
 			children = (
+				4CDDF98627D3653A00D91869 /* Domain */,
 				4CDC22E227D2959A00331B0E /* Presentation */,
-				4CB3690E27D13C42004F0AF0 /* Data */,
 				4CB3690027D119E6004F0AF0 /* Network Layer */,
 				4CB368D027D115D2004F0AF0 /* AppDelegate.swift */,
 				4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */,
@@ -128,13 +130,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		4CB3690E27D13C42004F0AF0 /* Data */ = {
+		4CB3690E27D13C42004F0AF0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4CB3690627D1270B004F0AF0 /* LocationModels.swift */,
+				4CB3690627D1270B004F0AF0 /* LocationMapper.swift */,
 				4CB3690F27D13C4D004F0AF0 /* Location.swift */,
+				4CDDF98727D3659B00D91869 /* LocationURL.swift */,
 			);
-			path = Data;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4CDC22E227D2959A00331B0E /* Presentation */ = {
@@ -161,6 +164,14 @@
 				4CB3691127D1435C004F0AF0 /* LocationsViiewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CDDF98627D3653A00D91869 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690E27D13C42004F0AF0 /* Models */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB3691027D13C4D004F0AF0 /* Location.swift in Sources */,
-				4CB3690727D1270B004F0AF0 /* LocationModels.swift in Sources */,
+				4CB3690727D1270B004F0AF0 /* LocationMapper.swift in Sources */,
+				4CDDF98827D3659B00D91869 /* LocationURL.swift in Sources */,
 				4CB3691427D1556A004F0AF0 /* LocationService.swift in Sources */,
 				4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */,
 				4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */,

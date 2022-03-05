@@ -1,5 +1,5 @@
 //
-//  LocationModels.swift
+//  LocationMapper.swift
 //  LocationWikipedia
 //
 //  Created by Mohammad Bitar on 3/3/22.
