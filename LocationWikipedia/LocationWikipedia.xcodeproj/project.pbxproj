@@ -21,6 +21,7 @@
 		4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */; };
 		4CDC22E627D2964F00331B0E /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */; };
 		4CDDF98827D3659B00D91869 /* LocationURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDDF98727D3659B00D91869 /* LocationURL.swift */; };
+		4CDDF99027D3E58D00D91869 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDDF98F27D3E58D00D91869 /* Alertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4CDC22E327D2964F00331B0E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		4CDC22E427D2964F00331B0E /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		4CDDF98727D3659B00D91869 /* LocationURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationURL.swift; sourceTree = "<group>"; };
+		4CDDF98F27D3E58D00D91869 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,15 +94,15 @@
 		4CB368CF27D115D2004F0AF0 /* LocationWikipedia */ = {
 			isa = PBXGroup;
 			children = (
+				4CDDF98B27D3E3C800D91869 /* API Infrastructure */,
+				4CDDF98C27D3E41C00D91869 /* Location API */,
 				4CDDF98627D3653A00D91869 /* Domain */,
 				4CDC22E227D2959A00331B0E /* Presentation */,
-				4CB3690027D119E6004F0AF0 /* Network Layer */,
 				4CB368D027D115D2004F0AF0 /* AppDelegate.swift */,
 				4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */,
 				4CB368D927D115D3004F0AF0 /* Assets.xcassets */,
 				4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */,
 				4CB368DE27D115D3004F0AF0 /* Info.plist */,
-				4CB3691327D1556A004F0AF0 /* LocationService.swift */,
 			);
 			path = LocationWikipedia;
 			sourceTree = "<group>";
@@ -111,23 +113,6 @@
 				4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */,
 			);
 			path = LocationWikipediaTests;
-			sourceTree = "<group>";
-		};
-		4CB3690027D119E6004F0AF0 /* Network Layer */ = {
-			isa = PBXGroup;
-			children = (
-				4CB3690A27D13AF5004F0AF0 /* Base */,
-				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
-			);
-			path = "Network Layer";
-			sourceTree = "<group>";
-		};
-		4CB3690A27D13AF5004F0AF0 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		4CB3690E27D13C42004F0AF0 /* Models */ = {
@@ -143,6 +128,7 @@
 		4CDC22E227D2959A00331B0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4CDDF98E27D3E58100D91869 /* Protocols */,
 				4CDC22EB27D29A5100331B0E /* Controller */,
 				4CDC22EA27D29A4800331B0E /* View */,
 			);
@@ -172,6 +158,31 @@
 				4CB3690E27D13C42004F0AF0 /* Models */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		4CDDF98B27D3E3C800D91869 /* API Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */,
+			);
+			path = "API Infrastructure";
+			sourceTree = "<group>";
+		};
+		4CDDF98C27D3E41C00D91869 /* Location API */ = {
+			isa = PBXGroup;
+			children = (
+				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
+				4CB3691327D1556A004F0AF0 /* LocationService.swift */,
+			);
+			path = "Location API";
+			sourceTree = "<group>";
+		};
+		4CDDF98E27D3E58100D91869 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4CDDF98F27D3E58D00D91869 /* Alertable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 				4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */,
 				4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */,
 				4CB368D127D115D2004F0AF0 /* AppDelegate.swift in Sources */,
+				4CDDF99027D3E58D00D91869 /* Alertable.swift in Sources */,
 				4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */,
 				4CB368D327D115D2004F0AF0 /* SceneDelegate.swift in Sources */,
 			);
