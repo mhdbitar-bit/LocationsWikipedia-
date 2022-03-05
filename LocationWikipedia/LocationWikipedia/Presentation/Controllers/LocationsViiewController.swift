@@ -6,24 +6,32 @@
 //
 
 import UIKit
+import Combine
 
 final class LocationsListViewController: UITableViewController, Alertable {
+    
+    private var viewModel: LocationViewModel!
+    private var locations = [Location]()
+    private var cancellables: Set<AnyCancellable> = []
     
     private enum LocationError: String {
         case InvalidLocation = "Invalid location, Can't open this location."
     }
+    private let cellID = "LocationTableViewCell"
     
-    let cellID = "LocationTableViewCell"
-    var locations = [Location]()
-    var service: LocationService?
+    convenience init(viewModel: LocationViewModel) {
+        self.init()
+        self.viewModel = viewModel
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        
+
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+        
+        setupRefreshControl()
+        
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +42,41 @@ final class LocationsListViewController: UITableViewController, Alertable {
         }
     }
     
+    private func bind() {
+        viewModel.$isLoading.sink { [weak self] isLoading in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.refreshControl?.beginRefreshing()
+                } else {
+                    self.refreshControl?.endRefreshing()
+                }
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$error.sink { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.showAlert(message: error)
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$locations.sink { [weak self] locations in
+            guard let self = self else { return }
+            self.locations = locations
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }.store(in: &cancellables)
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
     @objc private func refresh() {
-        DispatchQueue.main.async { [weak self] in
-            self?.refreshControl?.beginRefreshing()
-        }
-        service?.getLocations(completion: handleAPIResult)
+        viewModel.loadLocations()
     }
     
     private func handleAPIResult(_ result: Result<[Location], Error>) {
@@ -50,7 +88,8 @@ final class LocationsListViewController: UITableViewController, Alertable {
                 self?.tableView.reloadData()
             }
             
-        case .failure(_):
+        case let .failure(error):
+            showAlert(message: error.localizedDescription)
             refresh()
             return
         }

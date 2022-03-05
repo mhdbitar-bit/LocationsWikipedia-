@@ -24,12 +24,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func makeRootViewController() -> LocationsListViewController {
-        let vc = LocationsListViewController()
-        vc.navigationItem.title = "Locations"
-        
-        vc.service = RemoteLocationService(
-            url: LocationEndpoint.getLocations.url(baseURL: URL(string: "https://raw.githubusercontent.com")!),
+        let service = RemoteLocationService(
+            url: LocationEndpoint.getLocations.url(
+                baseURL: URL(string: "https://raw.githubusercontent.com")!),
             client: URLSessionHTTPClient(session: .shared))
+        let viewModel = LocationViewModel(service: service)
+        let vc = LocationsListViewController(viewModel: viewModel)
+        vc.navigationItem.title = "Locations"
         return vc
     }
 }
