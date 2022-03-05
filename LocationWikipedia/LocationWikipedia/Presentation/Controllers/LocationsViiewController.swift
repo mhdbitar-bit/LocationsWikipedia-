@@ -43,6 +43,12 @@ final class LocationsListViewController: UITableViewController, Alertable {
     }
     
     private func bind() {
+        bindLoading()
+        bindError()
+        bindLocations()
+    }
+    
+    private func bindLoading() {
         viewModel.$isLoading.sink { [weak self] isLoading in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -53,14 +59,18 @@ final class LocationsListViewController: UITableViewController, Alertable {
                 }
             }
         }.store(in: &cancellables)
-        
+    }
+    
+    private func bindError() {
         viewModel.$error.sink { [weak self] error in
             guard let self = self else { return }
             if let error = error {
                 self.showAlert(message: error)
             }
         }.store(in: &cancellables)
-        
+    }
+    
+    private func bindLocations() {
         viewModel.$locations.sink { [weak self] locations in
             guard let self = self else { return }
             self.locations = locations
@@ -78,23 +88,7 @@ final class LocationsListViewController: UITableViewController, Alertable {
     @objc private func refresh() {
         viewModel.loadLocations()
     }
-    
-    private func handleAPIResult(_ result: Result<[Location], Error>) {
-        switch result {
-        case let .success(locations):
-            self.locations = locations
-            DispatchQueue.main.async { [weak self] in
-                self?.refreshControl?.endRefreshing()
-                self?.tableView.reloadData()
-            }
-            
-        case let .failure(error):
-            showAlert(message: error.localizedDescription)
-            refresh()
-            return
-        }
-    }
-    
+        
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
