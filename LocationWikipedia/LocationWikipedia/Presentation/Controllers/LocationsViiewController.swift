@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class LocationsListViewController: UITableViewController {
+final class LocationsListViewController: UITableViewController, Alertable {
+    
+    private enum LocationError: String {
+        case InvalidLocation = "Invalid location, Can't open this location."
+    }
     
     let cellID = "LocationTableViewCell"
     var locations = [Location]()
@@ -86,21 +90,21 @@ final class LocationsListViewController: UITableViewController {
         ]
         
         guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
-            print("Invalid location base url")
+            showAlert(message: LocationError.InvalidLocation.rawValue)
             return
         }
         
         urlComps.queryItems = queryItems
         
         guard let locationUrl = urlComps.url else {
-            print("Invalid location final url")
+            showAlert(message: LocationError.InvalidLocation.rawValue)
             return
         }
         
         if UIApplication.shared.canOpenURL(locationUrl) {
             UIApplication.shared.open(locationUrl, options: [:], completionHandler: nil)
         } else {
-            // Show error
+            showAlert(message: LocationError.InvalidLocation.rawValue)
         }
     }
 }
