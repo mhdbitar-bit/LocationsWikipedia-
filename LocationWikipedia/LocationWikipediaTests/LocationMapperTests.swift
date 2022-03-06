@@ -26,4 +26,16 @@ class LocationMapperTests: XCTestCase {
             )
         }
     }
+    
+    func test_map_throwsErrorOn200HTTPResponseWithInvalidJSON() throws {
+        let invalidJSON = Data("invalid json".utf8)
+        
+        XCTAssertThrowsError(
+            try LocationMapper.map(invalidJSON, from: HTTPURLResponse(
+                url: URL(string: "http://any-url.com")!,
+                statusCode: 200,
+                httpVersion: nil,
+                headerFields: nil)!)
+        )
+    }
 }
