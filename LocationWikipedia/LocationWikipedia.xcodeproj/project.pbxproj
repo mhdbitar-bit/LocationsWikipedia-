@@ -140,16 +140,6 @@
 			path = LocationWikipediaTests;
 			sourceTree = "<group>";
 		};
-		4CB3690E27D13C42004F0AF0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4CB3690627D1270B004F0AF0 /* LocationMapper.swift */,
-				4CB3690F27D13C4D004F0AF0 /* Location.swift */,
-				4CDDF98727D3659B00D91869 /* LocationURL.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		4CDC22E227D2959A00331B0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +171,8 @@
 		4CDDF98627D3653A00D91869 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4CB3690E27D13C42004F0AF0 /* Models */,
+				4CB3690F27D13C4D004F0AF0 /* Location.swift */,
+				4CDDF98727D3659B00D91869 /* LocationURL.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -199,6 +190,7 @@
 			children = (
 				4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */,
 				4CB3691327D1556A004F0AF0 /* LocationService.swift */,
+				4CB3690627D1270B004F0AF0 /* LocationMapper.swift */,
 			);
 			path = "Location API";
 			sourceTree = "<group>";
