@@ -26,8 +26,6 @@ final class LocationsListViewController: UITableViewController, Alertable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "Locations"
         
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
         setupRefreshControl()

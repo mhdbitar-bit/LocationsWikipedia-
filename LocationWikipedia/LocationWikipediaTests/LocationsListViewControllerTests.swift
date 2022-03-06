@@ -17,13 +17,6 @@ class LocationsListViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView)
     }
     
-    func test_viewDidLoad_setTitle() {
-        let sut = makeSUT()
-        sut.loadViewIfNeeded()
-
-        XCTAssertEqual(sut.title, "Locations")
-    }
-    
     func test_configureTableView() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
