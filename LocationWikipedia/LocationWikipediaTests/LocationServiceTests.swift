@@ -12,7 +12,7 @@ class LocationServiceTests: XCTestCase {
     var urlSession: URLSession!
 
     
-    func test_getLocations() throws {
+    func test_performsGETRequestWithURL() throws {
         let url = anyURL()
         let exp = expectation(description: "Wait for request")
         
