@@ -8,8 +8,13 @@
 import Foundation
 
 public struct Location: Equatable {
-    let name: String?
-    let coordinators: (latitude: Double, longitude: Double)
+    public let name: String?
+    public let coordinators: (latitude: Double, longitude: Double)
+    
+    public init(name: String?, coordinators: (latitude: Double, longitude: Double)) {
+        self.name = name
+        self.coordinators = coordinators
+    }
 
     public static func == (lhs: Location, rhs: Location) -> Bool {
         return lhs.name == rhs.name && lhs.coordinators == rhs.coordinators
