@@ -29,6 +29,12 @@ class LocationsListViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView.dataSource, "Expeted TableViewDataSrouce to be not nil")
     }
     
+    func test_viewDidLoad_initialState() {
+        let sut = makeSUT()
+        
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    }
+    
     private func makeSUT() -> LocationsListViewController {
         let service = RemoteLocationService(
             url: URL(string: "http://any-url.com")!,
