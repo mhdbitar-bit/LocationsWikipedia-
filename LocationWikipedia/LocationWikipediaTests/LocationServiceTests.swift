@@ -12,7 +12,7 @@ class LocationServiceTests: XCTestCase {
     var urlSession: URLSession!
 
     
-    func test_performsGETRequestWithURL() throws {
+    func test_performsGETRequestWithURL() {
         let url = anyURL()
         let exp = expectation(description: "Wait for request")
         
@@ -24,6 +24,32 @@ class LocationServiceTests: XCTestCase {
         }
         
         makeSUT().getRquest(from: url, completion: { _ in })
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_performGETRequestWithURLWithSuccessResponse() {
+        let data = anyData()
+        let response = anyResponse()
+        let exp = expectation(description: "Wait for request")
+        
+        URLProtocolStub.requestHandler = { _ in
+            return (response, data)
+        }
+        
+        makeSUT().getRquest(from: anyURL()) { result in
+            switch result {
+            case .success(let values):
+                XCTAssertEqual(values.data, data)
+                XCTAssertEqual(values.response.url, response.url)
+                XCTAssertEqual(values.response.statusCode, response.statusCode)
+            
+            case .failure(let error):
+                XCTFail("Error was not expected: \(error)")
+            }
+            
+            exp.fulfill()
+        }
         
         wait(for: [exp], timeout: 1.0)
     }
