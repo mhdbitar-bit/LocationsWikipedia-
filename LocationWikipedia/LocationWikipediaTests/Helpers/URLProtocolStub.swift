@@ -8,7 +8,7 @@
 import XCTest
 
 class URLProtocolStub: URLProtocol {
-    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))?
+    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse?, Data?))?
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -23,10 +23,17 @@ class URLProtocolStub: URLProtocol {
             XCTFail("Received unexpected request with no handler set")
             return
         }
+        
         do {
             let (response, data) = try handler(request)
-            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            client?.urlProtocol(self, didLoad: data)
+            if let response = response {
+                client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            }
+            
+            if let data = data {
+                client?.urlProtocol(self, didLoad: data)
+            }
+            
             client?.urlProtocolDidFinishLoading(self)
         } catch {
             client?.urlProtocol(self, didFailWithError: error)
