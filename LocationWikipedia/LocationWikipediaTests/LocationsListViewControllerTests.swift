@@ -18,9 +18,15 @@ class LocationsListViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_setTitle() {
         let sut = makeSUT()
-        sut.loadViewIfNeeded()
         
         XCTAssertEqual(sut.title, "Locations")
+    }
+    
+    func test_configureTableView() {
+        let sut = makeSUT()
+        
+        XCTAssertNotNil(sut.tableView.delegate, "Expeted TableViewDelegate to be not nil")
+        XCTAssertNotNil(sut.tableView.dataSource, "Expeted TableViewDataSrouce to be not nil")
     }
     
     private func makeSUT() -> LocationsListViewController {
@@ -29,6 +35,7 @@ class LocationsListViewControllerTests: XCTestCase {
             client: URLSessionHTTPClient(session: .shared))
         let viewModel = LocationViewModel(service: service)
         let sut = LocationsListViewController(viewModel: viewModel)
+        sut.loadViewIfNeeded()
         
         return sut
     }
