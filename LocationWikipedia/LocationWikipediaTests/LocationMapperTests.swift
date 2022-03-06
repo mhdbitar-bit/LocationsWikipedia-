@@ -38,11 +38,36 @@ class LocationMapperTests: XCTestCase {
         XCTAssertEqual(result, [])
     }
     
+    func test_map_deliversLocationsOn200HTTPResponseWithJSONItems() throws {
+        let location1 = makelocation(name: "name 1", lat: 10.0, long: 2.0)
+        
+        let location2 = makelocation(name: "name 2", lat: 10.0, long: 2.0)
+        
+        let json = makeJson([location1.json, location2.json])
+        
+        let result = try LocationMapper.map(json, from: HTTPURLResponse(statusCode: 200))
+        
+        XCTAssertEqual(result, [location1.model, location2.model])
+        
+    }
+    
     // MARK: - Helpers
     
-    private func makeJson(_ items: [[String: Any]]) -> Data {
-        let json = ["locations": items]
+    private func makeJson(_ locations: [[String: Any]]) -> Data {
+        let json = ["locations": locations]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makelocation(name: String, lat: Double, long: Double) -> (model: Location, json: [String: Any]) {
+        let location = Location(name: name, coordinators: (latitude: lat, longitude: long))
+        
+        let json = [
+            "name": name,
+            "lat": lat,
+            "long": long
+        ].compactMapValues { $0 }
+        
+        return (location, json)
     }
 }
 
