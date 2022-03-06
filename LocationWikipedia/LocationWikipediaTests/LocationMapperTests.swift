@@ -80,7 +80,3 @@ private extension HTTPURLResponse {
             headerFields: nil)!
     }
 }
-
-func anyURL() -> URL {
-    return URL(string: "https://any-url.om")!
-}

@@ -11,7 +11,7 @@ import XCTest
 class LocationEndpointTests: XCTestCase {
     
     func test_location_endpointURL() {
-        let baseURl = URL(string: "https://any-url.com")!
+        let baseURl = anyURL()
         
         let received = LocationEndpoint.getLocations.url(baseURL: baseURl)
         
