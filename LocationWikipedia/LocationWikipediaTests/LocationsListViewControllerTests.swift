@@ -38,14 +38,7 @@ class LocationsListViewControllerTests: XCTestCase {
 
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
-    
-    func test_viewDidLoad_renderLocationsFromRemote() {
-        let sut = makeSUT()
-        sut.loadViewIfNeeded()
-
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
-    }
-    
+        
     private func makeSUT() -> LocationsListViewController {
         let service = RemoteLocationService(
             url: anyURL(),
