@@ -8,7 +8,8 @@
 - `https://github.com/mhdbitar-bit/wikipedia-iost`
 
 * I made my changes in this branch: `feature/deeplinking`
-
+* Run the **Wikipedia** app first, then run **LocationWikipedia** app
+ 
 ## App Architecture :
 
 * I appied clean code ,so this is the final result:
