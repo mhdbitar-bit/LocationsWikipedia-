@@ -17,11 +17,7 @@ class LocationMapperTests: XCTestCase {
         
         try samples.forEach { code in
             XCTAssertThrowsError(
-                try LocationMapper.map(json, from: HTTPURLResponse(
-                    url: URL(string: "http://any-url.com")!,
-                    statusCode: code,
-                    httpVersion: nil,
-                    headerFields: nil)!)
+                try LocationMapper.map(json, from: HTTPURLResponse(statusCode: code))
             )
         }
     }
@@ -30,22 +26,14 @@ class LocationMapperTests: XCTestCase {
         let invalidJSON = Data("invalid json".utf8)
         
         XCTAssertThrowsError(
-            try LocationMapper.map(invalidJSON, from: HTTPURLResponse(
-                url: URL(string: "http://any-url.com")!,
-                statusCode: 200,
-                httpVersion: nil,
-                headerFields: nil)!)
+            try LocationMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: 200))
         )
     }
     
     func test_map_deliversNoLocationsOn200HTTPResponseWithEmptyJsonList() throws {
         let json = makeJson([])
         let result = try LocationMapper.map(json, from: 
-            HTTPURLResponse(
-            url: URL(string: "http://any-url.com")!,
-            statusCode: 200,
-            httpVersion: nil,
-            headerFields: nil)!)
+            HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(result, [])
     }
@@ -56,4 +44,18 @@ class LocationMapperTests: XCTestCase {
         let json = ["locations": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
+}
+
+extension HTTPURLResponse {
+    convenience init(statusCode: Int) {
+        self.init(
+            url: anyURL(),
+            statusCode: statusCode,
+            httpVersion: nil,
+            headerFields: nil)!
+    }
+}
+
+func anyURL() -> URL {
+    return URL(string: "https://any-url.om")!
 }
