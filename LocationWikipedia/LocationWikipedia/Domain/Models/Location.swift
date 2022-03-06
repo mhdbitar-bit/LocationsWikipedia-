@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct Location {    
+public struct Location: Equatable {
     let name: String?
     let coordinators: (latitude: Double, longitude: Double)
+
+    public static func == (lhs: Location, rhs: Location) -> Bool {
+        return lhs.name == rhs.name && lhs.coordinators == rhs.coordinators
+    }
 }
