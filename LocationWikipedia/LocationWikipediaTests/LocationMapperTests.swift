@@ -11,14 +11,13 @@ import XCTest
 class LocationMapperTests: XCTestCase {
     
     func test_map_throwsErrorOnNon200HTTPResponse() throws {
-        let json = ["locations": []]
-        let data = try! JSONSerialization.data(withJSONObject: json)
+        let json = makeJson([])
         
         let samples = [199, 201, 300, 400, 500]
         
         try samples.forEach { code in
             XCTAssertThrowsError(
-                try LocationMapper.map(data, from: HTTPURLResponse(
+                try LocationMapper.map(json, from: HTTPURLResponse(
                     url: URL(string: "http://any-url.com")!,
                     statusCode: code,
                     httpVersion: nil,
@@ -37,5 +36,16 @@ class LocationMapperTests: XCTestCase {
                 httpVersion: nil,
                 headerFields: nil)!)
         )
+    }
+    
+    func test_map_deliversNoLocationsOn200HTTPResponseWithEmptyJsonList() throws {
+        
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeJson(_ items: [[String: Any]]) -> Data {
+        let json = ["locations": items]
+        return try! JSONSerialization.data(withJSONObject: json)
     }
 }
