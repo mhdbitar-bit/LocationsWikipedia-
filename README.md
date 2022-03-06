@@ -11,6 +11,6 @@
 
 ## App Architecture :
 
-* I tried to apply clean code as I can so this is the final result:
+* I appied clean code ,so this is the final result:
 
 ![Location Diagram](https://user-images.githubusercontent.com/100424059/156937613-04168e6a-10b5-4f94-93fd-c623ba5ce8c3.jpg)
