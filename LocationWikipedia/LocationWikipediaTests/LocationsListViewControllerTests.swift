@@ -15,9 +15,20 @@ class LocationsListViewControllerTests: XCTestCase {
             url: URL(string: "http://any-url.com")!,
             client: URLSessionHTTPClient(session: .shared))
         let viewModel = LocationViewModel(service: service)
-        let vc = LocationsListViewController(viewModel: viewModel)
-        _ = vc.view
+        let sut = LocationsListViewController(viewModel: viewModel)
+        _ = sut.view
             
-        XCTAssertNotNil(vc.tableView)
+        XCTAssertNotNil(sut.tableView)
+    }
+    
+    func test_viewDidLoad_setTitle() {
+        let service = RemoteLocationService(
+            url: URL(string: "http://any-url.com")!,
+            client: URLSessionHTTPClient(session: .shared))
+        let viewModel = LocationViewModel(service: service)
+        let sut = LocationsListViewController(viewModel: viewModel)
+        _ = sut.view
+
+        XCTAssertEqual(sut.title, "Locations")
     }
 }
