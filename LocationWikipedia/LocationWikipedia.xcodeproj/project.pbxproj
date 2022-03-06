@@ -11,7 +11,7 @@
 		4CB368D327D115D2004F0AF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368D227D115D2004F0AF0 /* SceneDelegate.swift */; };
 		4CB368DA27D115D3004F0AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368D927D115D3004F0AF0 /* Assets.xcassets */; };
 		4CB368DD27D115D3004F0AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB368DB27D115D3004F0AF0 /* LaunchScreen.storyboard */; };
-		4CB368E827D115D4004F0AF0 /* LocationWikipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */; };
+		4CB368E827D115D4004F0AF0 /* LocationsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB368E727D115D4004F0AF0 /* LocationsListViewControllerTests.swift */; };
 		4CB3690427D11A79004F0AF0 /* LocationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */; };
 		4CB3690727D1270B004F0AF0 /* LocationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690627D1270B004F0AF0 /* LocationMapper.swift */; };
 		4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */; };
@@ -43,7 +43,7 @@
 		4CB368DC27D115D3004F0AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CB368DE27D115D3004F0AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CB368E327D115D4004F0AF0 /* LocationWikipediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationWikipediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWikipediaTests.swift; sourceTree = "<group>"; };
+		4CB368E727D115D4004F0AF0 /* LocationsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListViewControllerTests.swift; sourceTree = "<group>"; };
 		4CB3690327D11A79004F0AF0 /* LocationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndpoint.swift; sourceTree = "<group>"; };
 		4CB3690627D1270B004F0AF0 /* LocationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapper.swift; sourceTree = "<group>"; };
 		4CB3690827D127BE004F0AF0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		4CB368E627D115D4004F0AF0 /* LocationWikipediaTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CB368E727D115D4004F0AF0 /* LocationWikipediaTests.swift */,
+				4CB368E727D115D4004F0AF0 /* LocationsListViewControllerTests.swift */,
 			);
 			path = LocationWikipediaTests;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB368E827D115D4004F0AF0 /* LocationWikipediaTests.swift in Sources */,
+				4CB368E827D115D4004F0AF0 /* LocationsListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
