@@ -71,7 +71,7 @@ class LocationMapperTests: XCTestCase {
     }
 }
 
-extension HTTPURLResponse {
+private extension HTTPURLResponse {
     convenience init(statusCode: Int) {
         self.init(
             url: anyURL(),
