@@ -39,7 +39,15 @@ class LocationMapperTests: XCTestCase {
     }
     
     func test_map_deliversNoLocationsOn200HTTPResponseWithEmptyJsonList() throws {
+        let json = makeJson([])
+        let result = try LocationMapper.map(json, from: 
+            HTTPURLResponse(
+            url: URL(string: "http://any-url.com")!,
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil)!)
         
+        XCTAssertEqual(result, [])
     }
     
     // MARK: - Helpers
