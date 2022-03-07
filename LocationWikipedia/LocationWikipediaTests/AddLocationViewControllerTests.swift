@@ -17,6 +17,13 @@ class AddLocationViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.view)
     }
     
+    func test_displayingTitle() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.title, "Add Location")
+    }
+    
     private func makeSUT() -> AddLocationViewController {
         let viewModel = AddLocationViewModel()
         let sut = AddLocationViewController(viewModel: viewModel)
