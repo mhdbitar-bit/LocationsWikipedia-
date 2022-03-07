@@ -30,6 +30,9 @@
 		4CDDF99327D3E7B000D91869 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDDF99227D3E7B000D91869 /* LocationViewModel.swift */; };
 		4CE24C1327D6582A00C9FDE1 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1127D6582A00C9FDE1 /* AddLocationViewController.swift */; };
 		4CE24C1427D6582A00C9FDE1 /* AddLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE24C1227D6582A00C9FDE1 /* AddLocationViewController.xib */; };
+		4CE24C1727D6668600C9FDE1 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1627D6668600C9FDE1 /* AddLocationViewModel.swift */; };
+		4CE24C1A27D667F500C9FDE1 /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1927D667F500C9FDE1 /* UITextField+Publisher.swift */; };
+		4CE24C1C27D6681700C9FDE1 /* UIButton+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1B27D6681700C9FDE1 /* UIButton+Extesnion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		4CDDF99227D3E7B000D91869 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		4CE24C1127D6582A00C9FDE1 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		4CE24C1227D6582A00C9FDE1 /* AddLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationViewController.xib; sourceTree = "<group>"; };
+		4CE24C1627D6668600C9FDE1 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
+		4CE24C1927D667F500C9FDE1 /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
+		4CE24C1B27D6681700C9FDE1 /* UIButton+Extesnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extesnion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		4CDC22E227D2959A00331B0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				4CE24C1827D667E800C9FDE1 /* Extensions */,
 				4CE24C0F27D657F000C9FDE1 /* AddLocationScene */,
 				4CE24C0E27D657C800C9FDE1 /* LocationScene */,
 				4CDDF98E27D3E58100D91869 /* Protocols */,
@@ -227,6 +234,7 @@
 		4CE24C0F27D657F000C9FDE1 /* AddLocationScene */ = {
 			isa = PBXGroup;
 			children = (
+				4CE24C1527D6667800C9FDE1 /* ViewModel */,
 				4CE24C1027D6581A00C9FDE1 /* Views */,
 			);
 			path = AddLocationScene;
@@ -239,6 +247,23 @@
 				4CE24C1227D6582A00C9FDE1 /* AddLocationViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4CE24C1527D6667800C9FDE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CE24C1627D6668600C9FDE1 /* AddLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4CE24C1827D667E800C9FDE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CE24C1927D667F500C9FDE1 /* UITextField+Publisher.swift */,
+				4CE24C1B27D6681700C9FDE1 /* UIButton+Extesnion.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,8 +371,11 @@
 				4CB3691027D13C4D004F0AF0 /* Location.swift in Sources */,
 				4CB3690727D1270B004F0AF0 /* LocationMapper.swift in Sources */,
 				4CDDF98827D3659B00D91869 /* LocationURL.swift in Sources */,
+				4CE24C1A27D667F500C9FDE1 /* UITextField+Publisher.swift in Sources */,
 				4CB3691427D1556A004F0AF0 /* LocationService.swift in Sources */,
+				4CE24C1C27D6681700C9FDE1 /* UIButton+Extesnion.swift in Sources */,
 				4CDC22E527D2964F00331B0E /* LocationTableViewCell.swift in Sources */,
+				4CE24C1727D6668600C9FDE1 /* AddLocationViewModel.swift in Sources */,
 				4CE24C1327D6582A00C9FDE1 /* AddLocationViewController.swift in Sources */,
 				4CB3691227D1435C004F0AF0 /* LocationsViiewController.swift in Sources */,
 				4CB3690927D127BE004F0AF0 /* URLSessionHTTPClient.swift in Sources */,
