@@ -27,7 +27,7 @@ final class LocationsListViewController: UITableViewController, Alertable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Locations"
+        self.title = viewModel.title
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLocationTapped))
 
@@ -93,7 +93,9 @@ final class LocationsListViewController: UITableViewController, Alertable {
     }
     
     @objc func addLocationTapped() {
-        // TODO open Add new Location page
+        let viewModel = AddLocationViewModel()
+        let viewController = AddLocationViewController(viewModel: viewModel)
+        show(viewController, sender: self)
     }
 }
 

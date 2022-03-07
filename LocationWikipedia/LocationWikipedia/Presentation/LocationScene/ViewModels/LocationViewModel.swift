@@ -11,6 +11,7 @@ import Combine
 final class LocationViewModel {
     private let service: LocationService
     
+    let title = "Locations"
     @Published var locations: [Location] = []
     @Published var isLoading: Bool = false
     @Published var error: String? = nil
