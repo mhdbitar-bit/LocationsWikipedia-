@@ -24,6 +24,22 @@ class AddLocationViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.title, "Add Location")
     }
     
+    func test_addButtonHasActionAssigned() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        let addButton: UIButton = sut.addButton
+        XCTAssertNotNil(addButton, "'AddLocationViewController' does not have UIButton property")
+        
+        guard let addButtonActions = addButton.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail("UIButton does not have actions assigned for Control Event .touchUpInside")
+            return
+        }
+        
+        // Assert UIButton has action with a method name
+        XCTAssertTrue(addButtonActions.contains("addBtnTapped:"))
+    }
+    
     private func makeSUT() -> AddLocationViewController {
         let viewModel = AddLocationViewModel()
         let sut = AddLocationViewController(viewModel: viewModel)
