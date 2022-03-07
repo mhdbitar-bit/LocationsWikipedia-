@@ -28,7 +28,7 @@ final class AddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Add Location"
+        title = viewModel.title
         
         placeField.delegate = self
         latField.delegate = self
