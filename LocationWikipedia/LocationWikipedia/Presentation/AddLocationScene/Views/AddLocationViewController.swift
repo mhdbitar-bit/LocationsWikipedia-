@@ -7,12 +7,19 @@
 
 import UIKit
 
-class AddLocationViewController: UIViewController {
+final class AddLocationViewController: UIViewController {
 
+    @IBOutlet var placeField: UITextField!
+    @IBOutlet var latField: UITextField!
+    @IBOutlet var longField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Add Location"
     }
-
+    
+    @IBAction func addBtnTapped(_ sender: UIButton) {
+    }
+    
 }

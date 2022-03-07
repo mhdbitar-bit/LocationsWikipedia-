@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLocationViewController" customModule="LocationWikipedia" customModuleProvider="target">
             <connections>
+                <outlet property="latField" destination="zyt-3y-emU" id="CpH-p8-MpI"/>
+                <outlet property="longField" destination="DlP-7u-6QE" id="WKP-Im-tuM"/>
+                <outlet property="placeField" destination="fNV-08-HZB" id="NQS-xf-cur"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +25,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-zd-dr9">
                     <rect key="frame" x="16" y="64" width="382" height="260"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNV-08-HZB">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNV-08-HZB">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="wmp-Bo-bbc"/>
@@ -30,7 +33,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-3y-emU">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-3y-emU">
                             <rect key="frame" x="0.0" y="70" width="382" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="uFO-AQ-gLW"/>
@@ -38,7 +41,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DlP-7u-6QE">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DlP-7u-6QE">
                             <rect key="frame" x="0.0" y="140" width="382" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ede-ec-eaQ"/>
@@ -50,6 +53,9 @@
                             <rect key="frame" x="0.0" y="210" width="382" height="50"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                            <connections>
+                                <action selector="addBtnTapped:" destination="-1" eventType="touchUpInside" id="MDS-1Y-Ofx"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
