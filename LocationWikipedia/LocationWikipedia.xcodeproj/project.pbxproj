@@ -34,6 +34,7 @@
 		4CE24C1A27D667F500C9FDE1 /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1927D667F500C9FDE1 /* UITextField+Publisher.swift */; };
 		4CE24C1C27D6681700C9FDE1 /* UIButton+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1B27D6681700C9FDE1 /* UIButton+Extesnion.swift */; };
 		4CE24C1E27D678CC00C9FDE1 /* AddLocationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1D27D678CC00C9FDE1 /* AddLocationViewControllerTests.swift */; };
+		4CE24C2027D67DE100C9FDE1 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE24C1F27D67DE100C9FDE1 /* SceneDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		4CE24C1927D667F500C9FDE1 /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		4CE24C1B27D6681700C9FDE1 /* UIButton+Extesnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extesnion.swift"; sourceTree = "<group>"; };
 		4CE24C1D27D678CC00C9FDE1 /* AddLocationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewControllerTests.swift; sourceTree = "<group>"; };
+		4CE24C1F27D67DE100C9FDE1 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				4C6BB44527D4C91A00708E23 /* LocationEndpointTests.swift */,
 				4C6BB44727D4CA8D00708E23 /* LocationMapperTests.swift */,
 				4C6BB45227D4FC0C00708E23 /* LocationServiceTests.swift */,
+				4CE24C1F27D67DE100C9FDE1 /* SceneDelegateTests.swift */,
 			);
 			path = LocationWikipediaTests;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				4C6BB44627D4C91A00708E23 /* LocationEndpointTests.swift in Sources */,
 				4CB368E827D115D4004F0AF0 /* LocationsListViewControllerTests.swift in Sources */,
 				4C6BB45127D4FBE600708E23 /* URLProtocolStub.swift in Sources */,
+				4CE24C2027D67DE100C9FDE1 /* SceneDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
