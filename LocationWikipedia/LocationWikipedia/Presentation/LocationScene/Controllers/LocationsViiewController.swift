@@ -29,6 +29,9 @@ final class LocationsListViewController: UITableViewController, Alertable {
         
         self.title = "Locations"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLocationTapped))
+
+        
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
         setupRefreshControl()
         bind()
@@ -87,6 +90,10 @@ final class LocationsListViewController: UITableViewController, Alertable {
     
     @objc private func refresh() {
         viewModel.loadLocations()
+    }
+    
+    @objc func addLocationTapped() {
+        // TODO open Add new Location page
     }
 }
 
