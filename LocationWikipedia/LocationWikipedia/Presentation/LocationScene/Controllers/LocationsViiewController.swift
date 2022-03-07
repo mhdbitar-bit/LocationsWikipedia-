@@ -95,6 +95,7 @@ final class LocationsListViewController: UITableViewController, Alertable {
     @objc func addLocationTapped() {
         let viewModel = AddLocationViewModel()
         let viewController = AddLocationViewController(viewModel: viewModel)
+        viewController.delegate = self
         show(viewController, sender: self)
     }
 }
@@ -162,5 +163,16 @@ extension LocationsListViewController {
         }
         
         return locationUrl
+    }
+}
+
+extension LocationsListViewController: AddLocationDelegate {
+    
+    func addLocation(location: Location) {
+        navigationController?.popViewController(animated: true)
+        self.locations.append(location)
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }

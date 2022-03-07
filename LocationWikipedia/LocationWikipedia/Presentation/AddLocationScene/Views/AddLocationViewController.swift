@@ -8,17 +8,21 @@
 import UIKit
 import Combine
 
-final class AddLocationViewController: UIViewController {
+protocol AddLocationDelegate {
+    func addLocation(location: Location)
+}
+
+final class AddLocationViewController: UIViewController, Alertable {
     
     @IBOutlet var placeField: UITextField!
     @IBOutlet var latField: UITextField!
     @IBOutlet var longField: UITextField!
     @IBOutlet var addButton: UIButton!
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet weak var scrollConstraint: NSLayoutConstraint!
     
+    var delegate: AddLocationDelegate?
     private var cancellables = Set<AnyCancellable>()
     private var viewModel: AddLocationViewModel!
+    let INVALID_FIELDS = "Invalid fields, Please enter valid data"
     
     convenience init(viewModel: AddLocationViewModel) {
         self.init()
@@ -33,27 +37,21 @@ final class AddLocationViewController: UIViewController {
         placeField.delegate = self
         latField.delegate = self
         longField.delegate = self
-        
-        // Listen for keybaord events
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
+                
         bind()
-    }
-    
-    deinit {
-        // Stop listing for keyboard hide/show events
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     private func bind() {
         bindTextFields()
+        bindValidation()
     }
     
     private func bindTextFields() {
+        placeField.textPublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.name, on: viewModel)
+            .store(in: &cancellables)
+        
         latField.textPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.latitude, on: viewModel)
@@ -77,48 +75,13 @@ final class AddLocationViewController: UIViewController {
     }
     
     private func addNew() {
-        // TOD add values into tableView
-    }
-}
-
-// MARK: - Keyboard functions
-
-extension AddLocationViewController {
-    
-    @objc func keyboardWillChange(notification: Notification) {
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        
-        if notification.name == UIResponder.keyboardWillShowNotification || notification.name ==  UIResponder.keyboardWillChangeFrameNotification {
-            view.frame.origin.y = -keyboardRect.height
+        if let latitude = Double(viewModel.latitude), let longitude = Double(viewModel.longitude) {
+            let location = Location(
+                name: viewModel.name,
+                coordinators: (latitude: latitude, longitude: longitude))
+            delegate?.addLocation(location: location)
         } else {
-            view.frame.origin.y = 0
-        }
-        
-    }
-    
-    @objc func keyboardWillShow(_ notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if scrollConstraint.constant <= 0 {
-                UIView.animate(withDuration: 0.3) {
-                    self.scrollConstraint.constant = 0
-                    self.scrollConstraint.constant += keyboardSize.height - 100
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(_ notification: NSNotification) {
-        
-        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-            if scrollConstraint.constant != 0 {
-                UIView.animate(withDuration: 0.3) {
-                    self.scrollConstraint.constant = 0
-                    self.view.layoutIfNeeded()
-                }
-            }
+            showAlert(message: INVALID_FIELDS)
         }
     }
 }
