@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = makeRootViewController()
+        navigationController.setViewControllers([makeRootViewController()], animated: false)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     
@@ -30,7 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             client: URLSessionHTTPClient())
         let viewModel = LocationViewModel(service: service)
         let vc = LocationsListViewController(viewModel: viewModel)
-        vc.navigationItem.title = "Locations"
         return vc
     }
 }
