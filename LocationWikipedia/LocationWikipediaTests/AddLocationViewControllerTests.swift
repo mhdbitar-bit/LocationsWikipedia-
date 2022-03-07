@@ -36,7 +36,6 @@ class AddLocationViewControllerTests: XCTestCase {
             return
         }
         
-        // Assert UIButton has action with a method name
         XCTAssertTrue(addButtonActions.contains("addBtnTapped:"))
     }
     
