@@ -18,12 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        navigationController.setViewControllers([makeRootViewController()], animated: false)
-        
         configureWindow()
     }
     
     func configureWindow() {
+        navigationController.setViewControllers([makeRootViewController()], animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
