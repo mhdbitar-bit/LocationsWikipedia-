@@ -5,7 +5,7 @@
 ## Setup:
 
 *  Clone the forked **Wikipedia** ios repository with the required changes. It can be found at:
-- `https://github.com/mhdbitar-bit/wikipedia-iost`
+- `https://github.com/mhdbitar-bit/wikipedia-ios`
 
 * I made my changes in this branch: `feature/deeplinking`
 * Run the **Wikipedia** app first, then run **LocationWikipedia** app
